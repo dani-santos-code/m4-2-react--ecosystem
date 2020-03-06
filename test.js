@@ -1,19 +1,4 @@
-export const sellers = {
-  alice: {
-    id: "alice",
-    storeName: "Alice's Fruit Store",
-    description: "Fruits n' stuff",
-    avatarSrc: "/assets/alice.jpg"
-  },
-  bob: {
-    id: "bob",
-    storeName: "Fruit Bazaar, by Bob",
-    description: "Imported fruit from across the world!",
-    avatarSrc: "/assets/bob.jpg"
-  }
-};
-
-export const items = {
+const items = {
   a: {
     id: "a",
     name: "Avocado",
@@ -83,3 +68,7 @@ export const items = {
     quantity: 0
   }
 };
+
+const itemsToArray = Object.values(items);
+
+console.log(itemsToArray);

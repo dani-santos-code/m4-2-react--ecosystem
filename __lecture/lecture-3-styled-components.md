@@ -10,7 +10,7 @@
 ```jsx
 import styled from 'styled-components';
 
-const Button = styled.button`
+const StyledButton = styled.button`
   background: blueviolet;
   border: none;
   padding: 16px 32px;
@@ -20,7 +20,7 @@ const Button = styled.button`
 `;
 
 ReactDOM.render(
-  <Button>Hello World</Button>,
+  <StyledButton>Hello World</StyledButton>,
   document.querySelector('#root')
 );
 ```
@@ -69,9 +69,9 @@ const Button = styled.button`
   font-size: 21px;
   border-radius: 2px;
 
-  &:hover {
-    transform: scale(1.1);
-  }
+    &-primary:hover {
+      transform: scale(1.1);
+    }
 `
 
 render(<Button>Hello world</Button>)
@@ -91,21 +91,27 @@ Convert the following inline styles to styled-components
 
 ---
 
-```css
-.wrapper {
-  margin: 0 auto;
-  height: 300px;
-}
+```jsx
+// .wrapper {
+//   margin: 0 auto;
+//   height: 300px;
+// }
+
+import styled from 'styled-components';
+
+const StyledWrapper = styled.div`
+   margin: 0 auto;
+   height: 300px;
+`;
 
 ```
 
-
 ```jsx
-function App(props) {
+function App() {
   return (
-    <div className="wrapper">
+    <StyledWrapper >
       Hello World
-    </div>
+    </StyledWrapper>
   )
 }
 ```
@@ -114,33 +120,51 @@ function App(props) {
 
 ### Exercise #2
 
-```css
+```jsx
 
-.btn {
-  color: tomato;
-  font-weight: bold;
-  padding: 20px;
-}
+// .btn {
+//   color: tomato;
+//   font-weight: bold;
+//   padding: 20px;
+// }
+// .btn:hover, .btn:focus {
+//   transform: translateY(-3px);
+// }
+// .icon {
+//   width: 32px;
+//   height: 32px;
+// }
+const StyledButton = styled.button`
+    color: tomato;
+    font-weight: bold;
+    padding: 20px;
+      &:hover,
+      &:focus {
+        transform: translateY(-3px);
+      }
+      .icon {
+        width: 32px;
+        height: 32px;
+        background-image: url(${props => props.icon});
+      }
+`;
 
-.btn:hover, .btn:focus {
-  transform: translateY(-3px);
-}
-
-.icon {
-  width: 32px;
-  height: 32px;
-}
+// const StyledIcon = styled.div`
+//         width: 32px;
+//         height: 32px;
+//         background-image: url(${props => props.icon});
+// `
 ```
 
 ```jsx
 function IconButton(props) {
   return (
-    <button className="btn">
+    <StyledButton>
       <i className="icon">
         {props.icon}
       </i>
       {props.children}
-    </button>
+    </StyledButton>
   )
 }
 ```

@@ -12,6 +12,14 @@ in SomeComponent (at src/index.js:24)
 in App (at src/index.js:31)
 ```
 
+```javascript
+  const items = [ {text: "Item 1"}, { text: "Item 2"}]
+
+  const Bacon = ({items}) => {
+    {items.map(item => <li key={`id${item.text.replace(" ", "-")}`>{item.text}}></li>)}
+  }
+```
+
 ---
 
 ### 🏠Housekeeping: Modules
@@ -73,6 +81,7 @@ export default data;
 ```js
 // src/index.js
 import theBestData from './data';
+
 ```
 
 ---
@@ -84,7 +93,7 @@ export const MAGIC_NUMBER = 123;
 
 ```js
 // src/index.js
-import MAGIC_NUMBER from './data';
+import {MAGIC_NUMBER} from './data';
 ```
 
 ---
@@ -94,27 +103,27 @@ import MAGIC_NUMBER from './data';
 export const users = [];
 export const sessions = [];
 
-const data = { users, sessions };
-
 export default data;
 ```
 
 ```js
-// src/index.js
-import {data, users} from './data';
+
+
+// solution
+import data, {users, sessions} from './data';
 ```
 
 ---
 
 ```js
 // src/data.js
-export default const baseball = '⚾️';
+export const baseball = '⚾️';
 
 ```
 
 ```js
 // src/index.js
-import baseball from './data';
+import {baseball} from './data';
 ```
 
 ---

@@ -5,8 +5,11 @@ import { items } from "../data";
 
 const StyledP = styled.p`
   margin: 10px;
-  font-size: 15px;
+  font-size: 17px;
   font-family: "Varela Round", sans-serif;
+  color: #230650d1;
+  text-align: center;
+  font-weight: bold;
 `;
 function Home(props) {
   return (

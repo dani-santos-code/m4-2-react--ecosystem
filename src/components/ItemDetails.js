@@ -8,6 +8,8 @@ const StyledWrapper = styled.div`
   flex-direction: row;
   width: 60%;
   margin: 0 auto;
+  height: 100vh;
+  padding-top: 60px;
 `;
 const StyledImage = styled.img`
   width: 400px;
@@ -52,6 +54,20 @@ const StyledButton = styled.button`
   cursor: pointer;
   width: 100%;
   margin: 20px auto;
+  outline: none;
+`;
+
+const StyledMessage = styled.div`
+  background-color: #856bd5;
+  font-family: "Kanit", sans-serif;
+  color: white;
+  border-radius: 7px;
+  padding: 10px;
+  font-size: 20px;
+  border: none;
+  width: 100%;
+  margin: 20px auto;
+  text-align: center;
 `;
 
 const StyledAddress = styled.address`
@@ -105,7 +121,7 @@ function ItemDetails() {
           {quantity > 0 ? (
             <StyledButton>${price} - Buy now</StyledButton>
           ) : (
-            <StyledButton>Out of Stock</StyledButton>
+            <StyledMessage>Out of Stock</StyledMessage>
           )}
           <StyledAddress>
             <StyledSellerAvatar src={`${avatarSrc}`} />

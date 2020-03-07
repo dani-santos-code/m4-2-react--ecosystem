@@ -10,6 +10,7 @@ const StyledFruitListWrapper = styled.div`
   justify-items: center;
   grid-gap: 100px;
   margin-top: 77px;
+  padding-bottom: 30px;
 `;
 
 const StyledImg = styled.img`

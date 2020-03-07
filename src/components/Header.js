@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const ListItem = styled.li`
   list-style-type: none;
@@ -26,23 +26,42 @@ const NavUl = styled.ul`
   flex-direction: row;
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavLink)`
   text-decoration: none;
   margin: 5px;
+  color: #4406bd;
+  &.selected {
+    color: red;
+  }
+`;
+const StyledLinkLogo = styled(NavLink)`
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
+  &.selected {
+    color: red;
+  }
 `;
 
 function Header() {
   return (
     <div>
       <HeaderWrapper>
-        <H1>Fruit Emporium</H1>
+        <StyledLinkLogo to="/">
+          <H1>Fruit Emporium</H1>
+        </StyledLinkLogo>
         <NavBar>
           <NavUl>
             <ListItem>
-              <StyledLink to="/">Home</StyledLink>
+              <StyledLink to="/" activeClassName="selected" exact>
+                Home
+              </StyledLink>
             </ListItem>
             <ListItem>
-              <StyledLink to="/about">About</StyledLink>
+              <StyledLink to="/about" activeClassName="selected">
+                About
+              </StyledLink>
             </ListItem>
           </NavUl>
         </NavBar>

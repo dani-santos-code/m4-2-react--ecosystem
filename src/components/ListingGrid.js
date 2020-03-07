@@ -37,14 +37,14 @@ const StyledCard = styled.div`
   background-color: white;
   padding: 40px 40px;
   border-radius: 10px;
-  box-shadow: 5px 5px 5px 5px rgba(230, 230, 230, 0.75);
+  box-shadow: 5px 5px 30px 5px rgba(230, 230, 230, 0.75);
 `;
 
 const StyleDivider = styled.div`
   background-color: lightgrey;
-  width: 20px;
+  width: 40px;
   border: 2px solid lightgrey;
-  border-radius: 20px;
+  border-radius: 0 0 50% 50%;
   margin: 0 auto;
 `;
 

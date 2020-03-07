@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import ItemDetails from "./ItemDetails";
+import PropTypes from "prop-types";
 
 const StyledFruitListWrapper = styled.div`
   display: grid;
@@ -51,25 +51,28 @@ const StyleDivider = styled.div`
 function ListingGrid({ itemList }) {
   return (
     <StyledFruitListWrapper>
-      <Router>
-        <Switch>
-          <Route path="/items/:itemId">
-            <ItemDetails />
-          </Route>
-        </Switch>
-        {itemList.map(el => (
-          <StyledCard key={el.id}>
-            <Link to={`/items/${el.id}`}>
-              <StyledImg src={`${el.imageSrc}`} />
-            </Link>
-            <StyledH2>{el.name}</StyledH2>
-            <StyleDivider />
-            <StyledP>{el.latinName}</StyledP>
-          </StyledCard>
-        ))}
-      </Router>
+      {itemList.map(el => (
+        <StyledCard key={el.id}>
+          <Link to={`/items/${el.id}`}>
+            <StyledImg src={`${el.imageSrc}`} />
+          </Link>
+          <StyledH2>{el.name}</StyledH2>
+          <StyleDivider />
+          <StyledP>{el.latinName}</StyledP>
+        </StyledCard>
+      ))}
     </StyledFruitListWrapper>
   );
 }
+
+ListingGrid.propTypes = {
+  itemList: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      latinName: PropTypes.string.isRequired,
+      imageSrc: PropTypes.string.isRequired
+    })
+  ).isRequired
+};
 
 export default ListingGrid;

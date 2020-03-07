@@ -1,10 +1,25 @@
 import React from "react";
-import { Router, Route, Switch, BrowserRouter } from "react-router-dom";
 import Header from "./Header";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import About from "./About";
+import Home from "./Home";
+import ItemDetails from "./ItemDetails";
 function App(props) {
   return (
     <div>
-      <Header />
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path={`/items/:itemId`} component={ItemDetails} />
+        </Switch>
+      </Router>
     </div>
   );
 }

@@ -1,9 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import styled from "styled-components";
-
-import About from "./About";
-import Home from "./Home";
+import { Link } from "react-router-dom";
 
 const ListItem = styled.li`
   list-style-type: none;
@@ -37,29 +34,19 @@ const StyledLink = styled(Link)`
 function Header() {
   return (
     <div>
-      <Router>
-        <HeaderWrapper>
-          <H1>Fruit Emporium</H1>
-          <NavBar>
-            <NavUl>
-              <ListItem>
-                <StyledLink to="/">Home</StyledLink>
-              </ListItem>
-              <ListItem>
-                <StyledLink to="/about">About</StyledLink>
-              </ListItem>
-            </NavUl>
-          </NavBar>
-        </HeaderWrapper>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-        </Switch>
-      </Router>
+      <HeaderWrapper>
+        <H1>Fruit Emporium</H1>
+        <NavBar>
+          <NavUl>
+            <ListItem>
+              <StyledLink to="/">Home</StyledLink>
+            </ListItem>
+            <ListItem>
+              <StyledLink to="/about">About</StyledLink>
+            </ListItem>
+          </NavUl>
+        </NavBar>
+      </HeaderWrapper>
     </div>
   );
 }

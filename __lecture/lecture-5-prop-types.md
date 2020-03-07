@@ -25,7 +25,7 @@ const App = ({ user, data }) => {
 Historically, we'd wrap adjacent children in a `<div>`:
 
 ```jsx
-import React from 'react';
+import React from "react";
 
 const App = ({ user, data }) => {
   return (
@@ -33,8 +33,8 @@ const App = ({ user, data }) => {
       <Header user={user} />
       <Content data={data} />
     </div>
-  )
-}
+  );
+};
 ```
 
 ---
@@ -42,7 +42,7 @@ const App = ({ user, data }) => {
 We can also use a `Fragment`:
 
 ```jsx
-import React from 'react';
+import React from "react";
 
 const App = ({ user, data }) => {
   return (
@@ -50,8 +50,8 @@ const App = ({ user, data }) => {
       <Header user={user} />
       <Content data={data} />
     </React.Fragment>
-  )
-}
+  );
+};
 ```
 
 ---
@@ -59,7 +59,7 @@ const App = ({ user, data }) => {
 Shorthand:
 
 ```jsx
-import React from 'react';
+import React from "react";
 
 const App = ({ user, data }) => {
   return (
@@ -67,8 +67,8 @@ const App = ({ user, data }) => {
       <Header user={user} />
       <Content data={data} />
     </>
-  )
-}
+  );
+};
 ```
 
 ---
@@ -96,9 +96,9 @@ It's very forgiving.
 ---
 
 ```js
-const add5ToNum = (n) => {
+const add5ToNum = n => {
   return n + 5;
-}
+};
 
 add5ToNum(100); // -> 105
 add5ToNum("5"); // -> ??
@@ -131,16 +131,20 @@ yarn add prop-types
 We use PropTypes to _annotate props_ in your components
 
 ```jsx
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const UserProfile = ({ username, age, address }) => {
   return (
     <React.Fragment>
-      <h1>{username} is {age} years old</h1>
-      <p>They live at {address.line1} in {address.city}</p>
+      <h1>
+        {username} is {age} years old
+      </h1>
+      <p>
+        They live at {address.line1} in {address.city}
+      </p>
     </React.Fragment>
-  )
-}
+  );
+};
 
 UserProfile.propTypes = {
   username: PropTypes.string.isRequired,
@@ -148,24 +152,26 @@ UserProfile.propTypes = {
   address: PropTypes.shape({
     line1: PropTypes.string.isRequired,
     line2: PropTypes.string,
-    city: PropTypes.string.isRequired,
-  }).isRequired,
-}
-
+    city: PropTypes.string.isRequired
+  }).isRequired
+};
 ```
 
 ---
-
 
 ```jsx live=true
 const UserProfile = ({ username, age, address }) => {
   return (
     <React.Fragment>
-      <p>{username} is {age} years old</p>
-      <p>They live at {address.line1} in {address.city}</p>
+      <p>
+        {username} is {age} years old
+      </p>
+      <p>
+        They live at {address.line1} in {address.city}
+      </p>
     </React.Fragment>
-  )
-}
+  );
+};
 
 UserProfile.propTypes = {
   username: PropTypes.string.isRequired,
@@ -173,21 +179,20 @@ UserProfile.propTypes = {
   address: PropTypes.shape({
     line1: PropTypes.string.isRequired,
     line2: PropTypes.string,
-    city: PropTypes.string.isRequired,
-  }).isRequired,
-}
+    city: PropTypes.string.isRequired
+  }).isRequired
+};
 
 render(
   <UserProfile
     username="superman"
     age={200}
     address={{
-      line1: '123 Krypton st.',
-      city: 'N/A',
+      line1: "123 Krypton st.",
+      city: "N/A"
     }}
   />
-)
-
+);
 ```
 
 ---

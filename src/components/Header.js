@@ -30,17 +30,38 @@ const StyledLink = styled(NavLink)`
   text-decoration: none;
   margin: 5px;
   color: #4406bd;
+  &:hover {
+    color: #dc01d4;
+  }
+  position: relative;
   &.selected {
-    color: red;
+    &::after {
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: #dc01d4;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
   }
 `;
 const StyledLinkLogo = styled(NavLink)`
   text-decoration: none;
+  position: relative;
   &:visited {
     color: inherit;
   }
   &.selected {
-    color: red;
+    &::after {
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: #dc01d4;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
   }
 `;
 

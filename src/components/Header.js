@@ -52,17 +52,6 @@ const StyledLinkLogo = styled(NavLink)`
   &:visited {
     color: inherit;
   }
-  &.selected {
-    &::after {
-      content: "";
-      width: 100%;
-      height: 2px;
-      background-color: #dc01d4;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
-  }
 `;
 
 function Header() {
@@ -82,6 +71,9 @@ function Header() {
             <ListItem>
               <StyledLink to="/about" activeClassName="selected">
                 About
+              </StyledLink>
+              <StyledLink to="/sellers" activeClassName="selected">
+                Sellers
               </StyledLink>
             </ListItem>
           </NavUl>

@@ -86,7 +86,8 @@ function ItemDetails() {
     imageSrc,
     countryOfOrigin,
     sellerId,
-    price
+    price,
+    quantity
   } = items[itemId];
   const { avatarSrc, storeName } = sellers[sellerId];
 
@@ -101,7 +102,11 @@ function ItemDetails() {
           <StyledCountryInfo>
             Product of <span>{countryOfOrigin}</span>
           </StyledCountryInfo>
-          <StyledButton>${price} - Buy now</StyledButton>
+          {quantity > 0 ? (
+            <StyledButton>${price} - Buy now</StyledButton>
+          ) : (
+            <StyledButton>Out of Stock</StyledButton>
+          )}
           <StyledAddress>
             <StyledSellerAvatar src={`${avatarSrc}`} />
             <SellerP>

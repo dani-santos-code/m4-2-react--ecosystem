@@ -14,6 +14,7 @@ const StyledP = styled.p`
   display: flex;
   flex-wrap: wrap;
   color: #230650d1;
+  padding: 40px;
 `;
 
 function About(props) {
@@ -22,11 +23,8 @@ function About(props) {
       <StyledP>
         Fruit emporium is founded on a very simple principle: Fruit is good. We
         carry the finest selection of produce from around the world, from tart
-        citrus to sweet cherries.
-      </StyledP>
-      <StyledP>
-        Our sellers are world-class, and your fruit is guaranteed to be worthy
-        of auction in Asian markets.
+        citrus to sweet cherries. Our sellers are world-class, and your fruit is
+        guaranteed to be worthy of auction in Asian markets.
       </StyledP>
     </StyledWrapper>
   );

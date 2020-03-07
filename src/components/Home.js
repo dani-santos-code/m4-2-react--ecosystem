@@ -10,6 +10,7 @@ const StyledP = styled.p`
   color: #230650d1;
   text-align: center;
   font-weight: bold;
+  padding: 40px;
 `;
 function Home(props) {
   return (

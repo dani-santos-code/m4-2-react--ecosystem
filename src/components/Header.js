@@ -17,6 +17,8 @@ const H1 = styled.h1`
   margin-left: 10px;
   font-family: "Varela Round", sans-serif;
   color: #4406bd;
+  padding: 0 57px;
+  font-size: 25px;
 `;
 const NavBar = styled.nav`
   margin-right: 70px;
@@ -27,6 +29,8 @@ const NavBar = styled.nav`
 const NavUl = styled.ul`
   display: flex;
   flex-direction: row;
+  margin: 0;
+  margin-top: 6px;
 `;
 
 const StyledLink = styled(NavLink)`
@@ -75,6 +79,8 @@ function Header() {
               <StyledLink to="/about" activeClassName="selected">
                 About
               </StyledLink>
+            </ListItem>
+            <ListItem>
               <StyledLink to="/sellers" activeClassName="selected">
                 Sellers
               </StyledLink>

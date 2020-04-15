@@ -45,9 +45,7 @@ What gets rendered in the following snippets?
   <Route exact={true} path="/">
     Home
   </Route>
-  <Route path="/about">
-    About
-  </Route>
+  <Route path="/about">About</Route>
 </div>
 ```
 
@@ -57,15 +55,9 @@ Current URL: http://localhost:3000/about
 
 ```jsx
 <div>
-  <Route path="/items/:itemId">
-    Item detail page
-  </Route>
-  <Route path="/items">
-    Item list page
-  </Route>
-  <Route>
-    404 not found
-  </Route>
+  <Route path="/items/:itemId">Item detail page</Route>
+  <Route path="/items">Item list page</Route>
+  <Route>404 not found</Route>
 </div>
 ```
 
@@ -86,11 +78,7 @@ All routes must be nested under a router
 ---
 
 ```jsx
-import {
-  BrowserRouter as Router,
-  Switch, 
-  Route
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App(props) {
   return (
@@ -109,7 +97,7 @@ function App(props) {
         </Switch>
       </div>
     </Router>
-  )
+  );
 }
 
 export default App;
@@ -122,11 +110,9 @@ export default App;
 Use the provided `<Link>` component to get from one route to another.
 
 ```jsx
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-<Link to="/shop/abc123">
-  View item details
-</Link>
+<Link to="/shop/abc123">View item details</Link>;
 ```
 
 ---
@@ -168,14 +154,14 @@ We'll learn much more about them in the next few lectures.
 ---
 
 ```jsx
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
 const ItemDetails = () => {
   // `useParams` is the hook.
   // Hooks always start with `use`.
-  const {itemId} = useParams();
+  const { itemId } = useParams();
 
-  return <h3>Item ID: {itemId}</h3>
+  return <h3>Item ID: {itemId}</h3>;
 };
 ```
 
